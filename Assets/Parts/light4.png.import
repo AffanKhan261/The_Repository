@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1bjug1n476bn"
-path="res://.godot/imported/yrkGs9.png-9b6eede7c1f43477b87cbf9cd0c2d9a4.ctex"
+uid="uid://bxap6bpj0a0u2"
+path="res://.godot/imported/light4.png-2fff49e2ba626136ff76ec507cb8cb82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://The_Repository/Assets/yrkGs9.png"
-dest_files=["res://.godot/imported/yrkGs9.png-9b6eede7c1f43477b87cbf9cd0c2d9a4.ctex"]
+source_file="res://The_Repository/Assets/Parts/light4.png"
+dest_files=["res://.godot/imported/light4.png-2fff49e2ba626136ff76ec507cb8cb82.ctex"]
 
 [params]
 

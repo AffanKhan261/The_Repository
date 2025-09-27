@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dsq6yb1ci2a70"]
+[gd_scene load_steps=17 format=3 uid="uid://dsq6yb1ci2a70"]
 
 [ext_resource type="Script" uid="uid://cqhb7c0mp3cp5" path="res://The_Repository/Scripts/game_manager.gd" id="1_mt61y"]
 [ext_resource type="PackedScene" uid="uid://cyj62pcoiyqi2" path="res://The_Repository/Scenes/player.tscn" id="1_okxid"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b8kvvvmc7wrx7" path="res://The_Repository/Scenes/slime.tscn" id="7_qreyg"]
 [ext_resource type="FontFile" uid="uid://cm133y6ucutww" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://mh8kufgd68ea" path="res://The_Repository/Scenes/red_slime.tscn" id="9_5cfnq"]
+[ext_resource type="PackedScene" uid="uid://dmsel3oj4s3qq" path="res://The_Repository/Scenes/portal.tscn" id="10_ci2r2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ci2r2"]
 texture = ExtResource("2_5cfnq")
@@ -180,6 +181,21 @@ sources/0 = SubResource("TileSetAtlasSource_ci2r2")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5cfnq"]
 
+[sub_resource type="Animation" id="Animation_ci2r2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1984, 21)]
+}
+
 [sub_resource type="Animation" id="Animation_5cfnq"]
 resource_name = "move_it"
 loop_mode = 2
@@ -196,21 +212,6 @@ tracks/0/keys = {
 "values": [Vector2(1984, 21), Vector2(1920, 21)]
 }
 
-[sub_resource type="Animation" id="Animation_ci2r2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1984, 21)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1wla3"]
 _data = {
 &"RESET": SubResource("Animation_ci2r2"),
@@ -223,9 +224,9 @@ _data = {
 script = ExtResource("1_mt61y")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 2052.0
+offset_left = 2007.0
 offset_top = -44.0
-offset_right = 2217.0
+offset_right = 2172.0
 offset_bottom = -21.0
 text = "You collected x coins!"
 
@@ -352,3 +353,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_1wla3")
 }
 autoplay = "move_it"
+
+[node name="Portal" parent="." instance=ExtResource("10_ci2r2")]
+position = Vector2(2208, -17)

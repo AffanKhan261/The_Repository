@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1bjug1n476bn"
-path="res://.godot/imported/yrkGs9.png-9b6eede7c1f43477b87cbf9cd0c2d9a4.ctex"
+uid="uid://dcr0ueysshq00"
+path="res://.godot/imported/noise17.png-ac728518d9e140dd9a71f28ae779b8c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://The_Repository/Assets/yrkGs9.png"
-dest_files=["res://.godot/imported/yrkGs9.png-9b6eede7c1f43477b87cbf9cd0c2d9a4.ctex"]
+source_file="res://The_Repository/Assets/Parts/noise17.png"
+dest_files=["res://.godot/imported/noise17.png-ac728518d9e140dd9a71f28ae779b8c7.ctex"]
 
 [params]
 

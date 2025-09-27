@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmsel3oj4s3qq"]
+
+[ext_resource type="Texture2D" uid="uid://cnav0y5fttobf" path="res://The_Repository/Assets/Planets/planet01.png" id="1_46y18"]
+[ext_resource type="Script" uid="uid://c2s07wx85r6r3" path="res://The_Repository/Scripts/portal.gd" id="1_u7a12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7a12"]
+atlas = ExtResource("1_46y18")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k0ab"]
+atlas = ExtResource("1_46y18")
+region = Rect2(640, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roptm"]
+atlas = ExtResource("1_46y18")
+region = Rect2(320, 640, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k67ap"]
+atlas = ExtResource("1_46y18")
+region = Rect2(640, 640, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cqust"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7a12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k0ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roptm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k67ap")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avfhv"]
+size = Vector2(57, 54)
+
+[node name="Portal" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_u7a12")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.536743e-07, 2.842171e-14)
+scale = Vector2(0.190625, 0.190625)
+sprite_frames = SubResource("SpriteFrames_cqust")
+autoplay = "default"
+frame = 1
+frame_progress = 0.358201
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_avfhv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

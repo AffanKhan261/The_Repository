@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://xaggvdy1swv5"
-path="res://.godot/imported/PixelOperator8.ttf-5b2f9cb4676b25a00aeb3a3b708a4865.fontdata"
+path="res://.godot/imported/PixelOperator8.ttf-cc1625ff3df0b1ca9ca777bb6a249ab0.fontdata"
 
 [deps]
 
-source_file="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf"
-dest_files=["res://.godot/imported/PixelOperator8.ttf-5b2f9cb4676b25a00aeb3a3b708a4865.fontdata"]
+source_file="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf"
+dest_files=["res://.godot/imported/PixelOperator8.ttf-cc1625ff3df0b1ca9ca777bb6a249ab0.fontdata"]
 
 [params]
 
@@ -21,7 +21,6 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
-modulate_color_glyphs=false
 hinting=1
 subpixel_positioning=4
 keep_rounding_remainders=true

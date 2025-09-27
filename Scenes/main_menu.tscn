@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://c40r8ifdpragr"]
+[gd_scene load_steps=18 format=3 uid="uid://c40r8ifdpragr"]
 
 [ext_resource type="Script" uid="uid://c2v8qoirgduhf" path="res://The_Repository/Scripts/main_menu.gd" id="1_2m70o"]
 [ext_resource type="Texture2D" uid="uid://ds4sipq7h1lg6" path="res://The_Repository/Assets/yrkGs9.png" id="1_2nckp"]
 [ext_resource type="Script" uid="uid://87bx3g3l7lp0" path="res://The_Repository/Scripts/fullscreen_toggle.gd" id="3_7bqlg"]
+[ext_resource type="Script" uid="uid://dk33cq5fsrpco" path="res://The_Repository/Scripts/audio_control.gd" id="3_kser5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cp0ys"]
 texture = ExtResource("1_2nckp")
@@ -218,7 +219,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_r46xo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_nrfm1")
 text = "Back"
 
-[node name="HSlider" type="HSlider" parent="Settings"]
+[node name="AudioControl" type="HSlider" parent="Settings"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -234,6 +235,8 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_kser5")
 max_value = 1.0
 step = 0.05
 value = 1.0
+script = ExtResource("3_kser5")
+audio_bus_name = "Music"
 
 [node name="FullscreenToggle" type="CheckButton" parent="Settings"]
 layout_mode = 1
@@ -254,4 +257,5 @@ script = ExtResource("3_7bqlg")
 [connection signal="pressed" from="MainButtons/How to play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="MainButtons/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_back_settings_pressed"]
+[connection signal="value_changed" from="Settings/AudioControl" to="Settings/AudioControl" method="_on_value_changed"]
 [connection signal="toggled" from="Settings/FullscreenToggle" to="Settings/FullscreenToggle" method="_on_toggled"]

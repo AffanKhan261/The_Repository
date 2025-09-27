@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://dsq6yb1ci2a70"]
 
-[ext_resource type="Texture2D" uid="uid://sn2nf86jrj4f" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_0jrm3"]
-[ext_resource type="Script" uid="uid://wn8wfd7558rn" path="res://Scripts/game_manager.gd" id="1_mt61y"]
-[ext_resource type="PackedScene" uid="uid://cyj62pcoiyqi2" path="res://Scenes/player.tscn" id="1_okxid"]
-[ext_resource type="PackedScene" uid="uid://lbthi4rqw748" path="res://Scenes/killzone.tscn" id="3_otnv1"]
-[ext_resource type="PackedScene" uid="uid://dbs3ktpkxspqo" path="res://Scenes/coin.tscn" id="5_23dfw"]
-[ext_resource type="PackedScene" uid="uid://dmio50h52ladk" path="res://Scenes/platform.tscn" id="6_oxdn1"]
-[ext_resource type="PackedScene" uid="uid://b8kvvvmc7wrx7" path="res://Scenes/slime.tscn" id="7_qreyg"]
-[ext_resource type="FontFile" uid="uid://xaggvdy1swv5" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_v158k"]
+[ext_resource type="Texture2D" uid="uid://sn2nf86jrj4f" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_0jrm3"]
+[ext_resource type="Script" uid="uid://wn8wfd7558rn" path="res://The_Repository/Scripts/game_manager.gd" id="1_mt61y"]
+[ext_resource type="PackedScene" uid="uid://cyj62pcoiyqi2" path="res://The_Repository/Scenes/player.tscn" id="1_okxid"]
+[ext_resource type="PackedScene" uid="uid://lbthi4rqw748" path="res://The_Repository/Scenes/killzone.tscn" id="3_otnv1"]
+[ext_resource type="PackedScene" uid="uid://dbs3ktpkxspqo" path="res://The_Repository/Scenes/coin.tscn" id="5_23dfw"]
+[ext_resource type="PackedScene" uid="uid://dmio50h52ladk" path="res://The_Repository/Scenes/platform.tscn" id="6_oxdn1"]
+[ext_resource type="PackedScene" uid="uid://b8kvvvmc7wrx7" path="res://The_Repository/Scenes/slime.tscn" id="7_qreyg"]
+[ext_resource type="FontFile" uid="uid://xaggvdy1swv5" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_v158k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otnv1"]
 texture = ExtResource("1_0jrm3")

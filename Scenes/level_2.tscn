@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://3remxy2riu2q"]
+[gd_scene load_steps=8 format=3 uid="uid://3remxy2riu2q"]
 
 [ext_resource type="Texture2D" uid="uid://dp64wp5ftvweu" path="res://The_Repository/Assets/Tilemap/monochrome_tilemap.png" id="1_dcri5"]
 [ext_resource type="PackedScene" uid="uid://cyj62pcoiyqi2" path="res://The_Repository/Scenes/player.tscn" id="2_alm86"]
 [ext_resource type="PackedScene" uid="uid://lbthi4rqw748" path="res://The_Repository/Scenes/killzone.tscn" id="3_6n2ih"]
+[ext_resource type="FontFile" uid="uid://cm133y6ucutww" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_26i67"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_alm86"]
 texture = ExtResource("1_dcri5")
@@ -520,3 +521,12 @@ position = Vector2(23, 100)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(-25, 73)
 shape = SubResource("WorldBoundaryShape2D_26i67")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -117.0
+offset_top = -78.0
+offset_right = 103.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("4_26i67")
+theme_override_font_sizes/font_size = 8
+text = "Level 2"

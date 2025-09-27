@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbfge0ltx0jhp"]
+
+[ext_resource type="Texture2D" uid="uid://ds4sipq7h1lg6" path="res://The_Repository/Assets/yrkGs9.png" id="1_nug7b"]
+[ext_resource type="Script" uid="uid://c6lt42aqo5gs8" path="res://The_Repository/Scripts/how_to_play.gd" id="1_rcohu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcohu"]
+texture = ExtResource("1_nug7b")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nug7b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcohu"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81hua"]
+bg_color = Color(0.412152, 0.412152, 0.412152, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfh5q"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rcohu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rcohu")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -189.0
+offset_top = 44.0
+offset_right = 189.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 12
+theme_override_font_sizes/font_size = 61
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -189.0
+offset_top = 151.0
+offset_right = 189.0
+offset_bottom = 235.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 12
+theme_override_font_sizes/font_size = 27
+text = "Use the following keys:
+
+1. WASD or ARROW keys
+
+2. Can use space bar to jump as well
+
+Main objective of game:
+
+Collect as many coins as you can so that 
+you can maximize your score!
+
+Each coin adds +1 to your total score!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+offset_left = 61.0
+offset_top = 48.0
+offset_right = 233.0
+offset_bottom = 116.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nug7b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rcohu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_81hua")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfh5q")
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

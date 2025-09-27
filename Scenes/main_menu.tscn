@@ -1,8 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://c40r8ifdpragr"]
+[gd_scene load_steps=13 format=3 uid="uid://c40r8ifdpragr"]
+
+[ext_resource type="Script" uid="uid://c2v8qoirgduhf" path="res://The_Repository/Scripts/main_menu.gd" id="1_2m70o"]
+[ext_resource type="Texture2D" uid="uid://ds4sipq7h1lg6" path="res://The_Repository/Assets/yrkGs9.png" id="1_2nckp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cp0ys"]
+texture = ExtResource("1_2nckp")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2m70o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bqlg"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kser5"]
+bg_color = Color(0.412152, 0.412152, 0.412152, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m70o"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7bqlg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xfai"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r46xo"]
+bg_color = Color(0.412152, 0.412152, 0.412152, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrfm1"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -19,6 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2m70o")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -29,7 +77,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_cp0ys")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MainButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,35 +92,47 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 14
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2m70o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7bqlg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kser5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "Start Game"
 
-[node name="Settings" type="Button" parent="VBoxContainer"]
+[node name="Settings" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2m70o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7bqlg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kser5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "Settings"
 
-[node name="How to play" type="Button" parent="VBoxContainer"]
+[node name="How to play" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2m70o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7bqlg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kser5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "How to play"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2m70o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7bqlg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kser5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "Exit"
 
@@ -93,7 +153,59 @@ text = "Knightfall"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/How to play" to="." method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="Settings" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.5
+offset_top = -247.0
+offset_right = 268.5
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2m70o")
+
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -151.0
+offset_top = 12.0
+offset_right = 151.0
+offset_bottom = 78.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = 153.0
+offset_right = 86.0
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7bqlg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xfai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r46xo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrfm1")
+text = "Back"
+
+[connection signal="pressed" from="MainButtons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/How to play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="MainButtons/Exit" to="." method="_on_exit_pressed"]

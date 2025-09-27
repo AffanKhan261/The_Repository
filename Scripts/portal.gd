@@ -2,4 +2,4 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://The_Repository/Scenes/how_to_play.tscn")
+	get_tree().change_scene_to_file("res://The_Repository/Scenes/level_2.tscn")

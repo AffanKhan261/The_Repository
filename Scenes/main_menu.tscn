@@ -1,12 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c40r8ifdpragr"]
-
-[ext_resource type="FontFile" uid="uid://xaggvdy1swv5" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_28flt"]
-[ext_resource type="Script" uid="uid://c2v8qoirgduhf" path="res://Scripts/main_menu.gd" id="1_ce3w2"]
-[ext_resource type="Texture2D" uid="uid://ds4sipq7h1lg6" path="res://Assets/yrkGs9.png" id="2_n45e2"]
-[ext_resource type="FontFile" uid="uid://cx4bwgbn5lfm8" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_opfnp"]
+[gd_scene load_steps=3 format=3 uid="uid://c40r8ifdpragr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cp0ys"]
-texture = ExtResource("2_n45e2")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
 bg_color = Color(1, 1, 1, 1)
@@ -25,7 +19,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ce3w2")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -55,7 +48,6 @@ theme_override_constants/separation = 14
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "Start Game"
@@ -64,7 +56,6 @@ text = "Start Game"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "Settings"
@@ -73,7 +64,6 @@ text = "Settings"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "How to play"
@@ -82,7 +72,6 @@ text = "How to play"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "Exit"
@@ -99,7 +88,6 @@ offset_bottom = 165.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 12
-theme_override_fonts/font = ExtResource("4_opfnp")
 theme_override_font_sizes/font_size = 61
 text = "Knightfall"
 horizontal_alignment = 1

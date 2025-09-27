@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpyygs5acc5sc"]
+
+[ext_resource type="Texture2D" uid="uid://d4ges7g78c5h8" path="res://The_Repository/Assets/Planets/planet00.png" id="1_rbo0m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uyff"]
+atlas = ExtResource("1_rbo0m")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgcww"]
+atlas = ExtResource("1_rbo0m")
+region = Rect2(640, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no5hj"]
+atlas = ExtResource("1_rbo0m")
+region = Rect2(320, 640, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4eji"]
+atlas = ExtResource("1_rbo0m")
+region = Rect2(640, 640, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ec70t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uyff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgcww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no5hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4eji")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ec70t")
+autoplay = "default"
+frame = 3
+frame_progress = 0.63463324
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

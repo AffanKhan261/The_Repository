@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://3remxy2riu2q"]
 
-[ext_resource type="Texture2D" uid="uid://dp64wp5ftvweu" path="res://The_Repository/Assets/Tilemap/monochrome_tilemap.png" id="1_dcri5"]
+[ext_resource type="Texture2D" uid="uid://cbwxh5v1g26jv" path="res://The_Repository/Assets/Tilemap/monochrome_tilemap.png" id="1_dcri5"]
 [ext_resource type="PackedScene" uid="uid://cyj62pcoiyqi2" path="res://The_Repository/Scenes/player.tscn" id="2_alm86"]
 [ext_resource type="PackedScene" uid="uid://lbthi4rqw748" path="res://The_Repository/Scenes/killzone.tscn" id="3_6n2ih"]
-[ext_resource type="FontFile" uid="uid://cm133y6ucutww" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_26i67"]
+[ext_resource type="FontFile" uid="uid://cg36rarl80ed6" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_26i67"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_alm86"]
 texture = ExtResource("1_dcri5")

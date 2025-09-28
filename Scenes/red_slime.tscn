@@ -1,18 +1,37 @@
-[gd_scene load_steps=10 format=3 uid="uid://mh8kufgd68ea"]
+[gd_scene load_steps=15 format=3 uid="uid://mh8kufgd68ea"]
 
-[ext_resource type="Texture2D" uid="uid://dmmckxb5sad18" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_rfc66"]
+[ext_resource type="Texture2D" uid="uid://cbdyyhkicnlkx" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_rfc66"]
 [ext_resource type="PackedScene" uid="uid://lbthi4rqw748" path="res://The_Repository/Scenes/killzone.tscn" id="2_2luvc"]
 
 [sub_resource type="GDScript" id="GDScript_rfc66"]
-script/source = "extends Node2D
+script/source = "extends Area2D
 
 
 const SPEED = 60
 
+@export var max_health: int = 3
+var health: int = 3
+
 var direction = 1
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+
+func _ready() -> void:
+	health = max_health
+	# (Optional) ensure in group
+	if not is_in_group(\"Enemy\"):
+		add_to_group(\"Enemy\")
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	animated_sprite_2d.play(\"hit\")
+	if health <= 0:
+		die()
+func die():
+	# play animation / spawn particles
+	queue_free()
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_al6d0"]
@@ -30,6 +49,22 @@ region = Rect2(48, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e05mm"]
 atlas = ExtResource("1_rfc66")
 region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfc66"]
+atlas = ExtResource("1_rfc66")
+region = Rect2(0, 54, 24, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2luvc"]
+atlas = ExtResource("1_rfc66")
+region = Rect2(24, 54, 24, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maxrh"]
+atlas = ExtResource("1_rfc66")
+region = Rect2(48, 54, 24, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtmmm"]
+atlas = ExtResource("1_rfc66")
+region = Rect2(72, 54, 24, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_maxrh"]
 animations = [{
@@ -49,18 +84,43 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfc66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2luvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maxrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtmmm")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfc66"]
+size = Vector2(10, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtmmm"]
 size = Vector2(10, 14)
 
-[node name="Red_Slime" type="Node2D"]
+[node name="Red_Slime" type="Area2D"]
 script = SubResource("GDScript_rfc66")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_maxrh")
+animation = &"hit"
 autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_rfc66")
 
 [node name="Killzone" parent="." instance=ExtResource("2_2luvc")]
 

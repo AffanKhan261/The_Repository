@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://cyj62pcoiyqi2"]
 
-[ext_resource type="Texture2D" uid="uid://bw2uwtv326duv" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/knight.png" id="1_6t37u"]
-[ext_resource type="Script" uid="uid://dntpndaj38uhv" path="res://The_Repository/Scripts/player.gd" id="1_mmu0x"]
+[ext_resource type="Texture2D" uid="uid://cx1c50oq81eco" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/knight.png" id="1_6t37u"]
+[ext_resource type="Script" uid="uid://cdidxythnlptc" path="res://The_Repository/Scripts/player.gd" id="1_mmu0x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmu0x"]
 atlas = ExtResource("1_6t37u")
@@ -185,3 +185,6 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_x5afp")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(5, -5)

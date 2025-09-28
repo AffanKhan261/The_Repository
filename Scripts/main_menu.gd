@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://The_Repository/Scenes/game.tscn")
+	get_tree().change_scene_to_file("res://The_Repository/Scenes/story_line.tscn")
 
 
 func _on_settings_pressed() -> void:

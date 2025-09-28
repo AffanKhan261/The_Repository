@@ -113,7 +113,7 @@ size = Vector2(10, 14)
 script = SubResource("GDScript_rfc66")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_maxrh")
 animation = &"hit"
 autoplay = "default"

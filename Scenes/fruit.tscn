@@ -1,0 +1,154 @@
+[gd_scene load_steps=13 format=3 uid="uid://cf4l88dyoe8xt"]
+
+[ext_resource type="Script" uid="uid://20f4ywqc27cl" path="res://The_Repository/Scripts/fruit.gd" id="1_qf0sq"]
+[ext_resource type="Texture2D" uid="uid://0bohbsjxixqn" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/fruit.png" id="1_westm"]
+[ext_resource type="AudioStream" uid="uid://c8kq645rrnntp" path="res://The_Repository/Assets/brackeys_platformer_assets/brackeys_platformer_assets/sounds/power_up.wav" id="3_qyodm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf0sq"]
+atlas = ExtResource("1_westm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyodm"]
+atlas = ExtResource("1_westm")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q8md"]
+atlas = ExtResource("1_westm")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yblqt"]
+atlas = ExtResource("1_westm")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7lxv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf0sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyodm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q8md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yblqt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ed8di"]
+radius = 5.0
+
+[sub_resource type="Animation" id="Animation_qyodm"]
+resource_name = "fruit_pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3q8md"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yblqt"]
+_data = {
+&"RESET": SubResource("Animation_3q8md"),
+&"fruit_pickup": SubResource("Animation_qyodm")
+}
+
+[node name="Fruit" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_qf0sq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_a7lxv")
+autoplay = "default"
+frame = 3
+frame_progress = 0.4548607
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ed8di")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qyodm")
+bus = &"Sound Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AudioStreamPlayer2D")
+libraries = {
+&"": SubResource("AnimationLibrary_yblqt")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

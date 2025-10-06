@@ -126,6 +126,7 @@ func try_start_dash() -> void:
 	velocity.x = dash_dir * DASH_SPEED
 
 func perform_dash_motion() -> void:
+	animated_sprite.play("roll")
 	velocity.x = dash_dir * DASH_SPEED
 
 func end_dash() -> void:
